@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="8" dy="8" stdDeviation="0" flood-color="#18181b" />
+    </filter>
+  </defs>
+  
+  <!-- Outer Rounded Square Background -->
+  <rect x="24" y="24" width="464" height="464" rx="96" fill="#FACC15" stroke="#18181B" stroke-width="20" />
+  
+  <!-- Couch Base / Therapy couch illustration -->
+  <g transform="translate(60, 110)">
+    <!-- Couch Shadow Backing -->
+    <rect x="20" y="160" width="350" height="90" rx="36" fill="#18181B" />
+    <!-- Couch Main -->
+    <rect x="10" y="148" width="350" height="90" rx="36" fill="#FF4365" stroke="#18181B" stroke-width="16" />
+    <!-- Pillow -->
+    <rect x="20" y="90" width="90" height="110" rx="28" fill="#00D2FF" stroke="#18181B" stroke-width="16" transform="rotate(-12, 60, 140)" />
+    <!-- Couch Legs -->
+    <rect x="50" y="235" width="22" height="45" rx="10" fill="#18181B" />
+    <rect x="300" y="235" width="22" height="45" rx="10" fill="#18181B" />
+  </g>
+
+  <!-- Big Comic Brain / Glasses Character Floating -->
+  <g transform="translate(156, 80)">
+    <!-- Glasses Frame (Deranged Therapist Glasses) -->
+    <circle cx="65" cy="115" r="46" fill="#FFFFFF" stroke="#18181B" stroke-width="14" />
+    <circle cx="165" cy="115" r="46" fill="#FFFFFF" stroke="#18181B" stroke-width="14" />
+    <path d="M 111 110 L 119 110" stroke="#18181B" stroke-width="14" stroke-linecap="round" />
+    
+    <!-- Googly / Hypnotic Pupils -->
+    <circle cx="75" cy="115" r="18" fill="#18181B" />
+    <circle cx="80" cy="108" r="6" fill="#FFFFFF" />
+    <circle cx="155" cy="120" r="18" fill="#18181B" />
+    <circle cx="160" cy="113" r="6" fill="#FFFFFF" />
+
+    <!-- Mustache / Evil / Quirky smile -->
+    <path d="M 70 175 Q 115 220 160 175" fill="none" stroke="#18181B" stroke-width="14" stroke-linecap="round" />
+    <path d="M 100 185 L 105 195 L 115 188 L 125 195 L 130 185" fill="#FFFFFF" stroke="#18181B" stroke-width="8" stroke-linejoin="round" />
+  </g>
+
+  <!-- Little Devil / Wild Horn / Thought Bubble Spark -->
+  <path d="M 370 70 L 415 85 L 390 125 Z" fill="#FF4365" stroke="#18181B" stroke-width="12" stroke-linejoin="round" />
+  <path d="M 110 70 L 65 85 L 90 125 Z" fill="#FF4365" stroke="#18181B" stroke-width="12" stroke-linejoin="round" />
+</svg>

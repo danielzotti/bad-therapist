@@ -1,0 +1,214 @@
+.container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.setupCard {
+  background: #ffffff;
+  border: var(--border-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-flat-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.titleArea {
+  text-align: center;
+  border-bottom: 3px solid var(--color-border);
+  padding-bottom: 16px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-dark);
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  margin-top: 4px;
+}
+
+.playerList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.playerRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f9fafb;
+  border: 2.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  box-shadow: var(--shadow-flat-sm);
+}
+
+.avatarButton {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-border);
+  background-color: #fef08a;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-flat-sm);
+  transition: transform 0.1s ease;
+}
+
+.avatarButton:hover {
+  transform: scale(1.08);
+}
+
+.nameInput {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: inherit;
+  padding: 8px 12px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: #ffffff;
+  color: var(--color-dark);
+}
+
+.nameInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.removeButton {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-border);
+  background-color: #fee2e2;
+  color: #dc2626;
+  font-size: 1.2rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.1s ease;
+}
+
+.removeButton:hover {
+  transform: scale(1.08);
+}
+
+.removeButton:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.addPlayerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  border: 2.5px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease;
+}
+
+.addPlayerButton:hover {
+  background-color: #bfdbfe;
+}
+
+.addPlayerButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Target score options */
+.targetSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 3px solid var(--color-border);
+  padding-top: 16px;
+}
+
+.targetLabel {
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.targetOptions {
+  display: flex;
+  gap: 8px;
+}
+
+.targetOptionBtn {
+  flex: 1;
+  padding: 10px 4px;
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background-color: #f3f4f6;
+  border: 2.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-dark);
+  box-shadow: var(--shadow-flat-sm);
+  transition: all 0.1s ease;
+}
+
+.targetOptionActive {
+  background-color: var(--color-yellow);
+  box-shadow: var(--shadow-flat);
+  transform: translate(-1px, -1px);
+}
+
+/* Start game button */
+.startButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 18px 24px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--color-green);
+  color: #ffffff;
+  border: var(--border-thick);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-flat);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.startButton:hover {
+  background-color: var(--color-green-dark);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-flat-lg);
+}
+
+.startButton:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-pressed);
+}

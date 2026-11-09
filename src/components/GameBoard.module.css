@@ -1,0 +1,235 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  width: 100%;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: var(--border-thick);
+  border-radius: var(--radius-lg);
+  padding: 10px 16px;
+  box-shadow: var(--shadow-flat);
+  margin-bottom: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  letter-spacing: -0.02em;
+}
+
+.brandIcon {
+  font-size: 1.6rem;
+}
+
+.topControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background-color: #f3f4f6;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--color-dark);
+  box-shadow: var(--shadow-flat-sm);
+  transition: transform 0.1s ease;
+}
+
+.iconBtn:hover {
+  transform: translate(-1px, -1px);
+}
+
+.iconBtn:active {
+  transform: translate(1px, 1px);
+}
+
+.mainArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Prescribe view layout */
+.prescribeContainer {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.patientMiniReminder {
+  background-color: #fef9c3;
+  border: 2.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  box-shadow: var(--shadow-flat-sm);
+}
+
+.reminderTitle {
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #854d0e;
+  margin-bottom: 2px;
+}
+
+.reminderText {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  line-height: 1.3;
+}
+
+/* Result Screen */
+.resultCard {
+  width: 100%;
+  max-width: 440px;
+  background-color: #ffffff;
+  border: var(--border-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-flat-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: center;
+}
+
+.verdictBadge {
+  display: inline-flex;
+  align-self: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  border: 3px solid var(--color-border);
+  box-shadow: var(--shadow-flat);
+}
+
+.badgeAccepted {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badgeRejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.resultTitle {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-dark);
+}
+
+.resultRecap {
+  background-color: #f9fafb;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.4;
+  color: var(--color-dark);
+}
+
+.votePrompt {
+  font-size: 0.95rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.voteButtonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.voteBtnSuccess {
+  padding: 16px;
+  background-color: var(--color-green);
+  color: #ffffff;
+  border: var(--border-thick);
+  border-radius: var(--radius-lg);
+  font-size: 1.15rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-flat);
+  transition: transform 0.1s ease;
+}
+
+.voteBtnSuccess:hover {
+  background-color: var(--color-green-dark);
+}
+
+.voteBtnFail {
+  padding: 14px;
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: var(--border-thick);
+  border-radius: var(--radius-lg);
+  font-size: 1.05rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-flat);
+  transition: transform 0.1s ease;
+}
+
+.voteBtnFail:hover {
+  background-color: #fecaca;
+}
+
+.nextTurnBtn {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--color-yellow);
+  color: var(--color-dark);
+  border: var(--border-thick);
+  border-radius: var(--radius-lg);
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-flat);
+}
+
+/* Footer info */
+.footer {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  margin-top: 20px;
+  letter-spacing: 0.05em;
+}

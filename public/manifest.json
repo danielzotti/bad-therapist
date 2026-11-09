@@ -1,0 +1,26 @@
+{
+  "name": "Bad Therapist: The Chaos Party Game",
+  "short_name": "BadTherapist",
+  "description": "A 100% offline pass-and-play party game where you prescribe hilariously awful treatments to bizarre life dilemmas.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FFFBEB",
+  "theme_color": "#FACC15",
+  "categories": ["games", "entertainment"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
