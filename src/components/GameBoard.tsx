@@ -2,343 +2,539 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import styles from './GameBoard.module.css';
-import { GamePhase, Patient, Therapy, Player, GameData } from '@/types/game';
-import SwipeCard from './SwipeCard';
-import PatientCard from './PatientCard';
-import PassDeviceScreen from './PassDeviceScreen';
+import {
+  GamePhase,
+  Card,
+  Player,
+  GameData,
+  Language,
+  SubmittedTreatment,
+} from '@/types/game';
+import { TRANSLATIONS } from '@/utils/translations';
 import PlayerSetup from './PlayerSetup';
+import PassScreen from './PassScreen';
+import TherapistSetup from './TherapistSetup';
+import PatientTurn from './PatientTurn';
+import JudgingScreen from './JudgingScreen';
+import RoundResult from './RoundResult';
 import ScoreBoard from './ScoreBoard';
+import RulesModal from './RulesModal';
 
-// Resilient fallback data in case offline cache has not warmed up yet
-const FALLBACK_PATIENTS: Patient[] = [
-  { id: 1, text: "I have severe impostor syndrome at work, despite being employee of the month for six consecutive years." },
-  { id: 2, text: "Whenever someone calls me on the phone without texting first, my fight-or-flight response activates immediately." },
-  { id: 3, text: "I rehearse ordering coffee three times in my head and still say 'You too!' when the barista says 'Enjoy your drink'." },
-  { id: 4, text: "I cannot start studying until my room is spotless, my laundry is done, and it is suddenly 3:00 AM." },
-  { id: 5, text: "I keep adding $400 worth of luxury items to my online shopping cart just to feel a spark of joy, then close the tab." },
-  { id: 6, text: "I get into heated imaginary arguments in the shower and end up furious with people who did nothing." }
-];
-
-const FALLBACK_THERAPIES: Therapy[] = [
-  { id: 1, text: "Prescribe an emotional support raccoon. Bring it to all company zoom meetings without acknowledging it." },
-  { id: 2, text: "Start a rumor in your workplace that you are actually a ghost who died on this floor in 1982." },
-  { id: 3, text: "Yell 'OBJECTION!' at the top of your lungs whenever anyone asks you to take on additional responsibilities." },
-  { id: 4, text: "Eat an entire raw onion in the shower while playing medieval war chants to intimidate your self-doubt." },
-  { id: 5, text: "Flee the country under the alias 'Doctor Linguine' and start an artisanal goat cheese sanctuary." }
-];
+// Resilient Fallback Data
+const FALLBACK_DATA: GameData = {
+  it: {
+    questions: [
+      { id: 1, text: "Dottore, non riesco a dormire la notte perché ripenso a figure imbarazzanti fatte 12 anni fa." },
+      { id: 2, text: "Continuo a innamorarmi solo di persone emotivamente non disponibili che mi lasciano in visualizzato." },
+      { id: 3, text: "Ogni volta che qualcuno mi chiama al telefono senza mandarmi prima un messaggio, vado in iperventilazione." },
+    ],
+    answers: [
+      { id: 1, text: "E la parte peggiore è che avevano assolutamente ragione tutti quanti." },
+      { id: 2, text: "Quindi ho finto la mia morte e ho aperto un rifugio abusivo per alpaca." },
+    ],
+    treatments: [
+      { id: 1, text: "Ti prescrivo un clistere di caffè bollente e un sonoro ceffone morale sulla nuca." },
+      { id: 2, text: "Fingi di essere posseduto da uno spirito medievale durante la prossima riunione su Teams." },
+      { id: 3, text: "Ecco 500mg di pillole placebo e il numero di uno sciamano che legge i fondi di tequila." },
+      { id: 4, text: "Mangia un'intera cipolla cruda sotto la doccia al buio ascoltando cori gregoriani a tutto volume." },
+      { id: 5, text: "Adotta un procione selvatico e portalo a ogni incontro sociale fingendo che sia il tuo avvocato." },
+    ],
+  },
+  en: {
+    questions: [
+      { id: 1, text: "Doctor, I can't sleep at night because I relive excruciatingly embarrassing moments from 2012." },
+      { id: 2, text: "I keep falling in love with emotionally unavailable people who leave me on delivered for four business days." },
+      { id: 3, text: "Whenever someone calls me on the phone without texting first, my fight-or-flight response goes into hyperdrive." },
+    ],
+    answers: [
+      { id: 1, text: "And the absolute worst part is that they were 100% correct about everything." },
+      { id: 2, text: "So naturally, I faked my death and opened an unauthorized llama sanctuary." },
+    ],
+    treatments: [
+      { id: 1, text: "I am prescribing a scalding coffee enema and a firm, non-consensual slap across the face." },
+      { id: 2, text: "Pretend to be possessed by a 14th-century peasant during your next corporate review." },
+      { id: 3, text: "Take these 500mg sugar pills and call this sketchy psychic who reads tequila dregs." },
+      { id: 4, text: "Consume an entire raw onion in the shower while medieval war chants play on full blast." },
+      { id: 5, text: "Adopt a feral raccoon and bring it to every social gathering as your licensed legal counsel." },
+    ],
+  },
+};
 
 export default function GameBoard() {
-  const [gameData, setGameData] = useState<GameData>({
-    patients: FALLBACK_PATIENTS,
-    therapies: FALLBACK_THERAPIES,
-  });
-
+  const [language, setLanguage] = useState<Language>('it');
+  const [gameData, setGameData] = useState<GameData>(FALLBACK_DATA);
   const [phase, setPhase] = useState<GamePhase>('setup');
+
   const [players, setPlayers] = useState<Player[]>([
-    { id: '1', name: 'Dr. Quack', avatar: '🩺', score: 0, patientsCured: 0, malpracticeCases: 0 },
-    { id: '2', name: 'Dr. Chaos', avatar: '🧠', score: 0, patientsCured: 0, malpracticeCases: 0 },
+    { id: '1', name: 'Dr. Quack', avatar: '🩺', score: 0, hand: [] },
+    { id: '2', name: 'Dr. Chaos', avatar: '🧠', score: 0, hand: [] },
+    { id: '3', name: 'Dr. Panic', avatar: '☕', score: 0, hand: [] },
   ]);
-  const [activePlayerIndex, setActivePlayerIndex] = useState(0);
+
+  const [therapistIndex, setTherapistIndex] = useState(0);
   const [roundNumber, setRoundNumber] = useState(1);
   const [targetScore, setTargetScore] = useState<number>(3);
 
-  // Current turn cards
-  const [currentPatient, setCurrentPatient] = useState<Patient | null>(null);
-  const [currentTherapy, setCurrentTherapy] = useState<Therapy | null>(null);
-  const [turnAction, setTurnAction] = useState<'accepted' | 'rejected' | null>(null);
-  const [scoreAwarded, setScoreAwarded] = useState<boolean>(false);
+  // Deck pool state
+  const [remainingQuestions, setRemainingQuestions] = useState<Card[]>([]);
+  const [remainingAnswers, setRemainingAnswers] = useState<Card[]>([]);
+  const [remainingTreatments, setRemainingTreatments] = useState<Card[]>([]);
 
-  // Deck pools to avoid immediate repeats
-  const [remainingPatientIds, setRemainingPatientIds] = useState<number[]>([]);
-  const [remainingTherapyIds, setRemainingTherapyIds] = useState<number[]>([]);
+  // Current Round State
+  const [currentQuestion, setCurrentQuestion] = useState<Card | null>(null);
+  const [answerOptions, setAnswerOptions] = useState<Card[]>([]);
+  const [selectedAnswer, setSelectedAnswer] = useState<Card | null>(null);
 
-  // Modals & UI states
+  // Patient Submissions Queue
+  const [patientQueue, setPatientQueue] = useState<string[]>([]);
+  const [currentPatientId, setCurrentPatientId] = useState<string | null>(null);
+  const [submittedTreatments, setSubmittedTreatments] = useState<SubmittedTreatment[]>([]);
+  const [winningSubmission, setWinningSubmission] = useState<SubmittedTreatment | null>(null);
+
+  // Modals
   const [showScoreModal, setShowScoreModal] = useState(false);
+  const [showRulesModal, setShowRulesModal] = useState(false);
 
-  // Load public/data.json
+  const t = TRANSLATIONS[language];
+
+  // Fetch /data.json
   useEffect(() => {
     fetch('/data.json')
       .then((res) => {
-        if (!res.ok) throw new Error('Network error');
+        if (!res.ok) throw new Error('Data fetch failed');
         return res.json();
       })
       .then((data: GameData) => {
-        if (data && data.patients && data.therapies) {
+        if (data && data.it && data.en) {
           setGameData(data);
-          setRemainingPatientIds(data.patients.map((p) => p.id));
-          setRemainingTherapyIds(data.therapies.map((t) => t.id));
         }
       })
       .catch((err) => {
-        console.warn('[GameBoard] Using fallback data:', err);
-        setRemainingPatientIds(FALLBACK_PATIENTS.map((p) => p.id));
-        setRemainingTherapyIds(FALLBACK_THERAPIES.map((t) => t.id));
+        console.warn('[GameBoard] Using fallback cards:', err);
       });
   }, []);
 
-  // Pick random patient
-  const drawRandomPatient = useCallback((): Patient => {
-    let pool = remainingPatientIds;
-    if (pool.length === 0) {
-      pool = gameData.patients.map((p) => p.id);
-    }
-    const randomIndex = Math.floor(Math.random() * pool.length);
-    const chosenId = pool[randomIndex];
-    setRemainingPatientIds(pool.filter((id) => id !== chosenId));
-    return gameData.patients.find((p) => p.id === chosenId) || gameData.patients[0];
-  }, [gameData.patients, remainingPatientIds]);
+  // Update deck pools when gameData or language changes
+  useEffect(() => {
+    const deck = gameData[language] || FALLBACK_DATA[language];
+    setRemainingQuestions([...deck.questions]);
+    setRemainingAnswers([...deck.answers]);
+    setRemainingTreatments([...deck.treatments]);
+  }, [gameData, language]);
 
-  // Pick random therapy
-  const drawRandomTherapy = useCallback((): Therapy => {
-    let pool = remainingTherapyIds;
-    if (pool.length === 0) {
-      pool = gameData.therapies.map((t) => t.id);
-    }
-    const randomIndex = Math.floor(Math.random() * pool.length);
-    const chosenId = pool[randomIndex];
-    setRemainingTherapyIds(pool.filter((id) => id !== chosenId));
-    return gameData.therapies.find((t) => t.id === chosenId) || gameData.therapies[0];
-  }, [gameData.therapies, remainingTherapyIds]);
+  // Card Draw Helpers
+  const drawCard = useCallback((deckType: 'questions' | 'answers' | 'treatments'): Card => {
+    const currentDeck = gameData[language] || FALLBACK_DATA[language];
+    const source = currentDeck[deckType];
 
-  // Start game from setup
+    let pool =
+      deckType === 'questions'
+        ? remainingQuestions
+        : deckType === 'answers'
+        ? remainingAnswers
+        : remainingTreatments;
+
+    if (pool.length === 0) {
+      pool = [...source];
+    }
+
+    const randomIndex = Math.floor(Math.random() * pool.length);
+    const chosen = pool[randomIndex];
+    const nextPool = pool.filter((_, i) => i !== randomIndex);
+
+    if (deckType === 'questions') setRemainingQuestions(nextPool);
+    else if (deckType === 'answers') setRemainingAnswers(nextPool);
+    else setRemainingTreatments(nextPool);
+
+    return chosen || source[0];
+  }, [gameData, language, remainingAnswers, remainingQuestions, remainingTreatments]);
+
+  // Draw 5 Treatment cards for a player's initial hand
+  const drawTreatmentHand = useCallback((count = 5): Card[] => {
+    const hand: Card[] = [];
+    for (let i = 0; i < count; i++) {
+      hand.push(drawCard('treatments'));
+    }
+    return hand;
+  }, [drawCard]);
+
+  // 1. START GAME FROM SETUP
   const handleStartGame = (configuredPlayers: Player[], goal: number) => {
-    setPlayers(configuredPlayers);
+    // Deal 5 Treatment cards to each player
+    const initializedPlayers: Player[] = configuredPlayers.map((p) => ({
+      ...p,
+      score: 0,
+      hand: drawTreatmentHand(5),
+    }));
+
+    setPlayers(initializedPlayers);
     setTargetScore(goal);
-    setActivePlayerIndex(0);
+    setTherapistIndex(0);
     setRoundNumber(1);
-    setPhase('pass_device');
+    setPhase('pass_therapist');
   };
 
-  // Current active player object
-  const currentPlayer = players[activePlayerIndex] || players[0];
+  const currentTherapist = players[therapistIndex] || players[0];
 
-  // Pass device "Ready" clicked -> Draw patient and show dilemma
-  const handlePassReady = () => {
-    const patient = drawRandomPatient();
-    setCurrentPatient(patient);
-    setTurnAction(null);
-    setScoreAwarded(false);
-    setPhase('read_patient');
+  // 2. THERAPIST PASS SCREEN -> READY
+  const handleTherapistReady = () => {
+    const q = drawCard('questions');
+    const a1 = drawCard('answers');
+    const a2 = drawCard('answers');
+    setCurrentQuestion(q);
+    setAnswerOptions([a1, a2]);
+    setSelectedAnswer(a1);
+    setPhase('therapist_setup');
   };
 
-  // Patient read out loud -> Draw therapy and start swipe phase
-  const handleProceedToTherapy = () => {
-    const therapy = drawRandomTherapy();
-    setCurrentTherapy(therapy);
-    setPhase('prescribe');
+  // 3. THERAPIST REROLL QUESTION
+  const handleRerollQuestion = () => {
+    const newQ = drawCard('questions');
+    setCurrentQuestion(newQ);
   };
 
-  // Swiped left or right on therapy card
-  const handleSwipe = (direction: 'left' | 'right') => {
-    const action = direction === 'right' ? 'accepted' : 'rejected';
-    setTurnAction(action);
-    setPhase('result');
+  // 4. THERAPIST CONFIRMS PANELS 1 & 2
+  const handleConfirmTherapistSetup = (chosenAnswer: Card) => {
+    setSelectedAnswer(chosenAnswer);
+    setSubmittedTreatments([]);
+
+    // Build the queue of patients who must submit (everyone except current therapist)
+    const patientIds = players
+      .filter((_, idx) => idx !== therapistIndex)
+      .map((p) => p.id);
+
+    setPatientQueue(patientIds);
+    setCurrentPatientId(patientIds[0]);
+    setPhase('pass_patient');
   };
 
-  // Group verdict award
-  const handleRecordVerdict = (cured: boolean) => {
+  // Current Patient submitting
+  const currentPatient = useMemo(() => {
+    return players.find((p) => p.id === currentPatientId) || players[0];
+  }, [players, currentPatientId]);
+
+  // 5. PATIENT PASS SCREEN -> READY
+  const handlePatientReady = () => {
+    setPhase('patient_turn');
+  };
+
+  // 6. PATIENT SUBMITS TREATMENT CARD
+  const handleSubmitTreatment = (submittedCard: Card) => {
+    if (!currentPatientId) return;
+
+    // Remove submitted card from player's hand and draw a new one
+    const newReplacement = drawCard('treatments');
     setPlayers((prev) =>
-      prev.map((p, idx) => {
-        if (idx !== activePlayerIndex) return p;
-        return {
-          ...p,
-          score: cured ? p.score + 1 : p.score,
-          patientsCured: cured ? p.patientsCured + 1 : p.patientsCured,
-          malpracticeCases: cured ? p.malpracticeCases : p.malpracticeCases + 1,
-        };
+      prev.map((p) => {
+        if (p.id !== currentPatientId) return p;
+        const newHand = p.hand.filter((c) => c.id !== submittedCard.id);
+        newHand.push(newReplacement);
+        return { ...p, hand: newHand };
       })
     );
-    setScoreAwarded(true);
+
+    // Record submission
+    const newSubmissions: SubmittedTreatment[] = [
+      ...submittedTreatments,
+      { playerId: currentPatientId, card: submittedCard },
+    ];
+    setSubmittedTreatments(newSubmissions);
+
+    // Check next player in queue
+    const remainingQueue = patientQueue.filter((id) => id !== currentPatientId);
+    setPatientQueue(remainingQueue);
+
+    if (remainingQueue.length > 0) {
+      setCurrentPatientId(remainingQueue[0]);
+      setPhase('pass_patient');
+    } else {
+      // If only 1 patient played (2-player game), add a random dummy card from deck
+      let finalSubmissions = [...newSubmissions];
+      if (finalSubmissions.length < 2) {
+        finalSubmissions.push({
+          playerId: 'dummy',
+          card: drawCard('treatments'),
+          isDummy: true,
+        });
+      }
+
+      // Shuffle submissions anonymously using Fisher-Yates
+      for (let i = finalSubmissions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [finalSubmissions[i], finalSubmissions[j]] = [
+          finalSubmissions[j],
+          finalSubmissions[i],
+        ];
+      }
+
+      setSubmittedTreatments(finalSubmissions);
+      setPhase('pass_back_to_therapist');
+    }
   };
 
-  // Advance turn to next player
-  const handleNextTurn = () => {
-    // Check if current player just won
-    if (targetScore > 0 && currentPlayer.score >= targetScore) {
+  // 7. PASS BACK TO THERAPIST -> START JUDGING
+  const handleJudgingReady = () => {
+    setPhase('judging');
+  };
+
+  // 8. THERAPIST AWARDS WINNER
+  const handleAwardWinner = (winningSub: SubmittedTreatment) => {
+    setWinningSubmission(winningSub);
+
+    // If real player won, increment score
+    if (!winningSub.isDummy) {
+      setPlayers((prev) =>
+        prev.map((p) =>
+          p.id === winningSub.playerId ? { ...p, score: p.score + 1 } : p
+        )
+      );
+    }
+
+    setPhase('round_result');
+  };
+
+  // Find winning player object
+  const roundWinnerPlayer = useMemo(() => {
+    if (!winningSubmission) return currentTherapist;
+    if (winningSubmission.isDummy) {
+      return {
+        id: 'dummy',
+        name: language === 'it' ? 'Intelligenza Malasanitaria 🤖' : 'Medical Malpractice AI 🤖',
+        avatar: '🤖',
+        score: 0,
+        hand: [],
+      };
+    }
+    return players.find((p) => p.id === winningSubmission.playerId) || currentTherapist;
+  }, [winningSubmission, currentTherapist, language, players]);
+
+  // Is game ending this round?
+  const isGameEnding = useMemo(() => {
+    if (targetScore <= 0) return false;
+    return players.some((p) => p.score >= targetScore);
+  }, [players, targetScore]);
+
+  // 9. ADVANCE TURN / NEXT ROUND
+  const handleNextRound = () => {
+    if (isGameEnding) {
       setPhase('game_over');
       return;
     }
 
-    const nextIndex = (activePlayerIndex + 1) % players.length;
+    const nextIndex = (therapistIndex + 1) % players.length;
     if (nextIndex === 0) {
       setRoundNumber((r) => r + 1);
     }
-    setActivePlayerIndex(nextIndex);
-    setTurnAction(null);
-    setScoreAwarded(false);
-    setPhase('pass_device');
+    setTherapistIndex(nextIndex);
+    setCurrentQuestion(null);
+    setAnswerOptions([]);
+    setSelectedAnswer(null);
+    setSubmittedTreatments([]);
+    setWinningSubmission(null);
+    setPhase('pass_therapist');
   };
 
-  // Restart / Reset game
+  // Restart Game
   const handleRestart = () => {
     setShowScoreModal(false);
     setPlayers((prev) =>
       prev.map((p) => ({
         ...p,
         score: 0,
-        patientsCured: 0,
-        malpracticeCases: 0,
+        hand: drawTreatmentHand(5),
       }))
     );
-    setActivePlayerIndex(0);
+    setTherapistIndex(0);
     setRoundNumber(1);
+    setCurrentQuestion(null);
+    setAnswerOptions([]);
+    setSelectedAnswer(null);
+    setSubmittedTreatments([]);
+    setWinningSubmission(null);
     setPhase('setup');
   };
 
-  // Current winner if any
-  const winner = useMemo(() => {
+  // Overall winner
+  const overallWinner = useMemo(() => {
     if (targetScore <= 0) return null;
     return players.find((p) => p.score >= targetScore) || null;
   }, [players, targetScore]);
 
   return (
     <main className={styles.wrapper}>
-      {/* Top Bar Header */}
+      {/* Top Header Bar */}
       <header className={styles.topBar}>
         <div className={styles.brand}>
           <span className={styles.brandIcon}>🛋️</span>
-          <span>Bad Therapist</span>
+          <span>{t.appTitle}</span>
         </div>
 
         <div className={styles.topControls}>
+          {/* Language Toggle in Header */}
+          <button
+            type="button"
+            className={styles.iconBtn}
+            onClick={() => setLanguage((l) => (l === 'it' ? 'en' : 'it'))}
+            aria-label="Toggle language"
+            title="Switch Language"
+          >
+            <span>{language === 'it' ? '🇮🇹 IT' : '🇬🇧 EN'}</span>
+          </button>
+
+          {/* Rules Modal Button */}
+          <button
+            type="button"
+            className={styles.iconBtn}
+            onClick={() => setShowRulesModal(true)}
+            aria-label="Game Rules"
+            title={t.rules}
+          >
+            <span>📖</span>
+            <span>{t.rules}</span>
+          </button>
+
+          {/* Standings Modal Button */}
           {phase !== 'setup' && (
             <button
               type="button"
               className={styles.iconBtn}
               onClick={() => setShowScoreModal(true)}
-              aria-label="View Leaderboard"
+              aria-label="View Standings"
+              title={t.standings}
             >
               <span>📊</span>
-              <span>Standings</span>
+              <span>{t.standings}</span>
             </button>
           )}
         </div>
       </header>
 
-      {/* Main Game Screen depending on phase */}
+      {/* Main Game Screen */}
       <section className={styles.mainArea}>
+        {/* Phase 1: Setup */}
         {phase === 'setup' && (
           <PlayerSetup
             initialPlayers={players}
             targetScore={targetScore}
+            language={language}
+            onLanguageChange={setLanguage}
             onStartGame={handleStartGame}
           />
         )}
 
-        {phase === 'pass_device' && (
-          <PassDeviceScreen
-            player={currentPlayer}
+        {/* Phase 2: Pass Device to Therapist */}
+        {phase === 'pass_therapist' && (
+          <PassScreen
+            player={currentTherapist}
             roundNumber={roundNumber}
-            onReady={handlePassReady}
+            mode="to_therapist"
+            language={language}
+            onReady={handleTherapistReady}
           />
         )}
 
-        {phase === 'read_patient' && currentPatient && (
-          <PatientCard
+        {/* Phase 3: Therapist Sets Panels 1 & 2 */}
+        {phase === 'therapist_setup' && currentQuestion && (
+          <TherapistSetup
+            therapist={currentTherapist}
+            question={currentQuestion}
+            answerOptions={answerOptions}
+            language={language}
+            onRerollQuestion={handleRerollQuestion}
+            onConfirmSetup={handleConfirmTherapistSetup}
+          />
+        )}
+
+        {/* Phase 4: Pass to Patient */}
+        {phase === 'pass_patient' && currentPatient && (
+          <PassScreen
+            player={currentPatient}
+            roundNumber={roundNumber}
+            mode="to_patient"
+            language={language}
+            onReady={handlePatientReady}
+          />
+        )}
+
+        {/* Phase 5: Patient's Turn (5-Card Hand Selection) */}
+        {phase === 'patient_turn' && currentPatient && currentQuestion && selectedAnswer && (
+          <PatientTurn
             patient={currentPatient}
-            currentPlayer={currentPlayer}
-            onProceedToTherapy={handleProceedToTherapy}
+            question={currentQuestion}
+            answer={selectedAnswer}
+            language={language}
+            onSubmitTreatment={handleSubmitTreatment}
           />
         )}
 
-        {phase === 'prescribe' && currentTherapy && currentPatient && (
-          <div className={styles.prescribeContainer}>
-            <div className={styles.patientMiniReminder}>
-              <div className={styles.reminderTitle}>
-                Patient Dilemma (Dr. {currentPlayer.name}&apos;s turn):
-              </div>
-              <p className={styles.reminderText}>
-                &ldquo;{currentPatient.text}&rdquo;
-              </p>
-            </div>
-
-            <SwipeCard
-              therapy={currentTherapy}
-              onSwipe={handleSwipe}
-            />
-          </div>
+        {/* Phase 6: Pass Back to Therapist */}
+        {phase === 'pass_back_to_therapist' && (
+          <PassScreen
+            player={currentTherapist}
+            roundNumber={roundNumber}
+            mode="back_to_therapist"
+            language={language}
+            onReady={handleJudgingReady}
+          />
         )}
 
-        {phase === 'result' && currentTherapy && currentPatient && (
-          <div className={styles.resultCard}>
-            <div
-              className={`${styles.verdictBadge} ${
-                turnAction === 'accepted' ? styles.badgeAccepted : styles.badgeRejected
-              }`}
-            >
-              {turnAction === 'accepted' ? '✅ THERAPY ACCEPTED!' : '❌ THERAPY REJECTED!'}
-            </div>
-
-            <h3 className={styles.resultTitle}>
-              {currentPlayer.name}&apos;s Diagnosis
-            </h3>
-
-            <div className={styles.resultRecap}>
-              <div style={{ fontSize: '0.8rem', color: '#6b7280', marginBottom: 4 }}>
-                Proposed Treatment:
-              </div>
-              &ldquo;{currentTherapy.text}&rdquo;
-            </div>
-
-            {!scoreAwarded ? (
-              <>
-                <p className={styles.votePrompt}>
-                  Group Verdict: Did this save or doom the patient?
-                </p>
-
-                <div className={styles.voteButtonGroup}>
-                  <button
-                    type="button"
-                    className={styles.voteBtnSuccess}
-                    onClick={() => handleRecordVerdict(true)}
-                  >
-                    🏆 Genius Diagnosis! (+1 Point)
-                  </button>
-
-                  <button
-                    type="button"
-                    className={styles.voteBtnFail}
-                    onClick={() => handleRecordVerdict(false)}
-                  >
-                    💀 Pure Malpractice! (0 Points)
-                  </button>
-                </div>
-              </>
-            ) : (
-              <button
-                type="button"
-                className={styles.nextTurnBtn}
-                onClick={handleNextTurn}
-              >
-                Pass To Next Therapist 👉
-              </button>
-            )}
-          </div>
+        {/* Phase 7: Therapist Judging */}
+        {phase === 'judging' && currentQuestion && selectedAnswer && (
+          <JudgingScreen
+            therapist={currentTherapist}
+            question={currentQuestion}
+            answer={selectedAnswer}
+            submittedTreatments={submittedTreatments}
+            language={language}
+            onAwardWinner={handleAwardWinner}
+          />
         )}
 
+        {/* Phase 8: Round Result */}
+        {phase === 'round_result' && currentQuestion && selectedAnswer && winningSubmission && (
+          <RoundResult
+            winnerPlayer={roundWinnerPlayer}
+            question={currentQuestion}
+            answer={selectedAnswer}
+            winningTreatment={winningSubmission.card}
+            language={language}
+            isGameEnding={isGameEnding}
+            onNextTurn={handleNextRound}
+          />
+        )}
+
+        {/* Phase 9: Game Over */}
         {phase === 'game_over' && (
           <ScoreBoard
             players={players}
+            language={language}
             isGameOver={true}
-            winner={winner}
+            winner={overallWinner}
             onRestart={handleRestart}
           />
         )}
       </section>
 
-      {/* Standings Modal during game */}
+      {/* Floating / Dialog Modals */}
       {showScoreModal && (
         <ScoreBoard
           players={players}
+          language={language}
           isGameOver={false}
           onClose={() => setShowScoreModal(false)}
           onRestart={handleRestart}
         />
       )}
 
-      {/* Footer */}
+      {showRulesModal && (
+        <RulesModal
+          language={language}
+          onClose={() => setShowRulesModal(false)}
+        />
+      )}
+
       <footer className={styles.footer}>
-        100% Offline PWA • bad-therapist.zotti.dev
+        🛋️ Horrible Therapist • 100% Offline Pass &amp; Play PWA • 3-Panel Comic Edition
       </footer>
     </main>
   );

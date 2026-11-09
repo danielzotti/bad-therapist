@@ -2,10 +2,12 @@
 
 import React from 'react';
 import styles from './ScoreBoard.module.css';
-import { Player } from '@/types/game';
+import { Player, Language } from '@/types/game';
+import { TRANSLATIONS } from '@/utils/translations';
 
 interface ScoreBoardProps {
   players: Player[];
+  language: Language;
   isGameOver?: boolean;
   winner?: Player | null;
   onClose?: () => void;
@@ -14,12 +16,13 @@ interface ScoreBoardProps {
 
 export default function ScoreBoard({
   players,
+  language,
   isGameOver = false,
   winner,
   onClose,
   onRestart,
 }: ScoreBoardProps) {
-  // Sort players descending by score
+  const t = TRANSLATIONS[language];
   const sortedPlayers = [...players].sort((a, b) => b.score - a.score);
 
   return (
@@ -27,14 +30,14 @@ export default function ScoreBoard({
       <div className={styles.modal}>
         <div className={styles.modalHeader}>
           <h3 className={styles.title}>
-            {isGameOver ? '🏆 Victory Banquet!' : '📊 Therapist Standings'}
+            {isGameOver ? t.gameOverTitle : `📊 ${t.standings}`}
           </h3>
           {!isGameOver && onClose && (
             <button
               type="button"
               className={styles.closeBtn}
               onClick={onClose}
-              aria-label="Close Scoreboard"
+              aria-label={t.close}
             >
               ✕
             </button>
@@ -45,10 +48,10 @@ export default function ScoreBoard({
           <div className={styles.winnerBanner}>
             <div className={styles.winnerTrophy}>👑</div>
             <div className={styles.winnerTitle}>
-              {winner.avatar} {winner.name} WINS!
+              {winner.avatar} {winner.name} {language === 'it' ? 'VINCE!' : 'WINS!'}
             </div>
             <p style={{ fontSize: '0.85rem', fontWeight: 700, color: '#713f12' }}>
-              Officially certified as the least catastrophic therapist in the clinic!
+              {t.winnerTagline}
             </p>
           </div>
         )}
@@ -68,12 +71,11 @@ export default function ScoreBoard({
                   <span>{player.name}</span>
                   {index === 0 && <span>⭐</span>}
                 </div>
-                <div className={styles.playerSub}>
-                  {player.patientsCured} Cured • {player.malpracticeCases} Malpractice
-                </div>
               </div>
 
-              <div className={styles.scorePill}>{player.score} pts</div>
+              <div className={styles.scorePill}>
+                {player.score} {language === 'it' ? 'pt' : 'pts'}
+              </div>
             </div>
           ))}
         </div>
@@ -85,7 +87,7 @@ export default function ScoreBoard({
               className={styles.primaryBtn}
               onClick={onClose}
             >
-              Back to Game
+              {language === 'it' ? 'Torna al Gioco' : 'Back to Game'}
             </button>
           )}
 
@@ -94,7 +96,7 @@ export default function ScoreBoard({
             className={isGameOver ? styles.primaryBtn : styles.secondaryBtn}
             onClick={onRestart}
           >
-            {isGameOver ? 'Play Again 🚀' : 'Restart'}
+            {isGameOver ? t.playAgain : (language === 'it' ? 'Ricomincia Partita' : 'Restart')}
           </button>
         </div>
       </div>

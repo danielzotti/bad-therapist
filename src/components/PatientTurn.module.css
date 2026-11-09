@@ -1,0 +1,163 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.patientBanner {
+  background: #FFFFFF;
+  border: var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-flat);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.playerTag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.playerAvatar {
+  font-size: 1.5rem;
+}
+
+.titleArea {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainTitle {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--color-dark);
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.handSection {
+  background: #FFFFFF;
+  border: var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-flat);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.handHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.handTitle {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.handCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.handCard {
+  background: #FFF1F2;
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 105px;
+  position: relative;
+}
+
+.handCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-flat-sm);
+  background: #FFE4E6;
+}
+
+.handCard.selected {
+  background: #FDA4AF;
+  border-color: #BE123C;
+  border-width: 3.5px;
+  box-shadow: var(--shadow-flat);
+}
+
+.handCardText {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-dark);
+}
+
+.handCardBadge {
+  align-self: flex-end;
+  margin-top: 8px;
+  background: #BE123C;
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.submitBtn {
+  width: 100%;
+  background: var(--color-green);
+  color: #FFFFFF;
+  border: var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-size: 1.15rem;
+  font-weight: 900;
+  box-shadow: var(--shadow-flat);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+  margin-top: 6px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-flat-lg);
+  background: var(--color-green-dark);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: var(--shadow-pressed);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

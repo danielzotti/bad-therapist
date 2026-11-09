@@ -1,0 +1,115 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.card {
+  width: 100%;
+  background: #FFFFFF;
+  border: var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 36px 24px;
+  box-shadow: var(--shadow-flat-lg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.pillBadge {
+  background: var(--color-yellow);
+  border: 2px solid var(--color-border);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-flat-sm);
+}
+
+.mainHeading {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--color-dark);
+  line-height: 1.25;
+}
+
+.avatarCircle {
+  width: 96px;
+  height: 96px;
+  background: #FEF9C3;
+  border: 3.5px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  box-shadow: var(--shadow-flat);
+  margin: 6px 0;
+}
+
+.playerName {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: var(--color-dark);
+}
+
+.roleBadge {
+  background: #F1F5F9;
+  border: 2px solid var(--color-border);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.secretWarning {
+  background: #FEF2F2;
+  border: 2.5px dashed #EF4444;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  color: #991B1B;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-top: 6px;
+}
+
+.readyBtn {
+  width: 100%;
+  background: var(--color-green);
+  color: #FFFFFF;
+  border: var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 18px 24px;
+  font-size: 1.15rem;
+  font-weight: 900;
+  box-shadow: var(--shadow-flat);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+
+.readyBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-flat-lg);
+  background: var(--color-green-dark);
+}
+
+.readyBtn:active {
+  transform: translateY(2px);
+  box-shadow: var(--shadow-pressed);
+}

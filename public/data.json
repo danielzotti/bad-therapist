@@ -1,326 +1,208 @@
 {
-  "patients": [
-    {
-      "id": 1,
-      "text": "I have severe impostor syndrome at work, despite being employee of the month for six consecutive years."
-    },
-    {
-      "id": 2,
-      "text": "Whenever someone calls me on the phone without texting first, my fight-or-flight response activates immediately."
-    },
-    {
-      "id": 3,
-      "text": "I rehearse ordering coffee three times in my head and still say 'You too!' when the barista says 'Enjoy your drink'."
-    },
-    {
-      "id": 4,
-      "text": "I cannot start studying or working until my room is spotless, my laundry is done, and it is suddenly 3:00 AM."
-    },
-    {
-      "id": 5,
-      "text": "I keep adding $400 worth of luxury items to my online shopping cart just to feel a spark of joy, then close the tab."
-    },
-    {
-      "id": 6,
-      "text": "I get into heated, emotionally draining imaginary arguments in the shower and end up furious with people who did nothing."
-    },
-    {
-      "id": 7,
-      "text": "I refuse to watch an acclaimed 2-hour movie because 'I don't have time', then watch 4 hours of raccoon videos."
-    },
-    {
-      "id": 8,
-      "text": "I apologize profusely when someone else accidentally bumps into ME in the supermarket."
-    },
-    {
-      "id": 9,
-      "text": "I checked WebMD for an itchy elbow and am now 98% convinced I have a rare 17th-century pirate plague."
-    },
-    {
-      "id": 10,
-      "text": "I maintain a private mental tier list of my friends based strictly on how quickly they react to my memes."
-    },
-    {
-      "id": 11,
-      "text": "I hear the Microsoft Teams chime on a Sunday evening and my heart rate jumps to 180 BPM."
-    },
-    {
-      "id": 12,
-      "text": "I set 12 alarms in 4-minute intervals, wake up before the first one, and still end up 20 minutes late."
-    },
-    {
-      "id": 13,
-      "text": "I haven't opened my physical postal mail in five months because bad news legally cannot hurt me if it remains sealed."
-    },
-    {
-      "id": 14,
-      "text": "I pretend to be deeply engaged with my smartphone while walking past a coworker in the corridor to avoid eye contact."
-    },
-    {
-      "id": 15,
-      "text": "I sent a 3-minute voice message, immediately re-listened to it twice to evaluate my cadence, and cringed into the abyss."
-    },
-    {
-      "id": 16,
-      "text": "I bought an expensive ergonomic chair, a standing desk, and 4 houseplants, but I still work slouched like a boiled shrimp on the sofa."
-    },
-    {
-      "id": 17,
-      "text": "I can't go to sleep unless my closet door is 100% shut, otherwise the demon has a tactical line of sight."
-    },
-    {
-      "id": 18,
-      "text": "I feel an intense moral obligation to wave politely at cars that stop at pedestrian crossings, even though they are legally required to."
-    },
-    {
-      "id": 19,
-      "text": "I bought a 900-page classic novel to look cultured in coffee shops, but I've been stuck on chapter 2 for eighteen months."
-    },
-    {
-      "id": 20,
-      "text": "I have 47 browser tabs open across three windows because 'I might need that recipe for homemade sourdough in 2028'."
-    },
-    {
-      "id": 21,
-      "text": "I feel guilty calling in sick when I am literally shaking with a 102°F fever and unable to see straight."
-    },
-    {
-      "id": 22,
-      "text": "I have an overwhelming urge to clean the house only when I have a high-stakes deadline due in 45 minutes."
-    },
-    {
-      "id": 23,
-      "text": "Whenever an email begins with 'Per my previous email', I spend the next hour drafting revenge plots in my head."
-    },
-    {
-      "id": 24,
-      "text": "I stare into my fully stocked refrigerator for 10 minutes, sigh loudly, and decide there is nothing to eat."
-    },
-    {
-      "id": 25,
-      "text": "I get anxious when Spotify Wrapped drops because I fear my music taste will expose my spiritual bankruptcy."
-    },
-    {
-      "id": 26,
-      "text": "I left a WhatsApp group without explanation because someone used the wrong 'their', and now I feel like an international fugitive."
-    },
-    {
-      "id": 27,
-      "text": "I nodded along to a conversation for 20 minutes without hearing a single word because I was wondering if pigeons have feelings."
-    },
-    {
-      "id": 28,
-      "text": "I purchased gym clothes, a gym shaker, and pre-workout powder, but my primary workout is carrying groceries up the stairs."
-    },
-    {
-      "id": 29,
-      "text": "I obsessively track package deliveries every 12 minutes as if my psychic gaze will make the courier drive faster."
-    },
-    {
-      "id": 30,
-      "text": "I spent three hours customizing my avatar in an RPG, started the game, and immediately stopped playing forever."
-    },
-    {
-      "id": 31,
-      "text": "I feel personally attacked when a YouTube video has an unskippable 15-second ad about life insurance."
-    },
-    {
-      "id": 32,
-      "text": "I accidentally made eye contact with my Uber driver in the rearview mirror and had to pretend to look at a cloud for 15 miles."
-    },
-    {
-      "id": 33,
-      "text": "I refuse to use the big light in the living room because ambient lighting is the only thing keeping my sanity together."
-    },
-    {
-      "id": 34,
-      "text": "I have drafted 15 polite ways to cancel social plans that I voluntarily made yesterday with immense enthusiasm."
-    },
-    {
-      "id": 35,
-      "text": "I get deeply offended when someone tells me I look tired, even when I have had 3 hours of sleep and look like a goblin."
-    },
-    {
-      "id": 36,
-      "text": "I keep buying notebooks because they smell like potential, yet I refuse to write in them because my handwriting will ruin them."
-    },
-    {
-      "id": 37,
-      "text": "I walked into a room, forgot why I entered, spun around in a circle, and walked back out pretending I had a plan."
-    },
-    {
-      "id": 38,
-      "text": "I panic when a retail worker approaches and asks 'Can I help you find anything?' and reply 'Just looking!' while clutching a lawnmower."
-    },
-    {
-      "id": 39,
-      "text": "I hold onto clothing from eight years ago in case style trends cycle back to neon skinny jeans."
-    },
-    {
-      "id": 40,
-      "text": "I wrote a to-do list consisting only of tasks I already completed just so I could experience the rush of crossing them off."
-    }
-  ],
-  "therapies": [
-    {
-      "id": 1,
-      "text": "Prescribe an emotional support raccoon. Bring it to all company zoom meetings without acknowledging it."
-    },
-    {
-      "id": 2,
-      "text": "Start a rumor in your workplace that you are actually a ghost who died on this floor in 1982."
-    },
-    {
-      "id": 3,
-      "text": "Yell 'OBJECTION!' at the top of your lungs whenever anyone asks you to take on additional responsibilities."
-    },
-    {
-      "id": 4,
-      "text": "Eat an entire raw onion in the shower while playing medieval war chants to intimidate your self-doubt."
-    },
-    {
-      "id": 5,
-      "text": "Flee the country under the alias 'Doctor Linguine' and start an artisanal goat cheese sanctuary."
-    },
-    {
-      "id": 6,
-      "text": "Send a certified glitter bomb to your inner child to teach them that life is chaotic and sparkling."
-    },
-    {
-      "id": 7,
-      "text": "Respond to every urgent text message with an uncaptioned stock photo of a perplexed pelican."
-    },
-    {
-      "id": 8,
-      "text": "Challenge your anxiety to a formal sunrise duel with foam swords behind your neighborhood supermarket."
-    },
-    {
-      "id": 9,
-      "text": "Wear a velvet wizard cloak to family dinners and only speak in cryptic rhyming prophecies."
-    },
-    {
-      "id": 10,
-      "text": "Legally change your first name to 'Page Not Found' so government paperwork bounces automatically."
-    },
-    {
-      "id": 11,
-      "text": "Stick googly eyes on all your credit cards so they glare at you in silent disappointment during impulsive checkouts."
-    },
-    {
-      "id": 12,
-      "text": "Whenever someone gives you constructive criticism, whisper 'The ancient texts foretold this' and toss a smoke bomb."
-    },
-    {
-      "id": 13,
-      "text": "Hire a four-piece brass band to follow you around and play a sad trombone sound whenever you drop your keys."
-    },
-    {
-      "id": 14,
-      "text": "Cut all human contact and make all important life and financial decisions using a Magic 8-Ball."
-    },
-    {
-      "id": 15,
-      "text": "Host a candlelit memorial service in your backyard for your abandoned hobby supplies."
-    },
-    {
-      "id": 16,
-      "text": "Take a vow of absolute silence, broken exclusively when ordering spicy chicken nuggets at 2:00 AM."
-    },
-    {
-      "id": 17,
-      "text": "Wear swimming goggles and flippers to your next job interview to display bold aquatic adaptability."
-    },
-    {
-      "id": 18,
-      "text": "Scream directly into a jar of peanut butter, seal it tightly, and bury it under an oak tree."
-    },
-    {
-      "id": 19,
-      "text": "Declare your living room an autonomous pirate republic and demand customs declaration forms from visiting guests."
-    },
-    {
-      "id": 20,
-      "text": "Adopt a feral pigeon, name him your Senior VP of Operations, and consult him before sending difficult emails."
-    },
-    {
-      "id": 21,
-      "text": "Carry around a clipboard and a yellow safety vest at all times; you can walk into any restricted area unquestioned."
-    },
-    {
-      "id": 22,
-      "text": "Whenever someone tells you their horoscope sign, nod intensely and say 'That explains the smell'."
-    },
-    {
-      "id": 23,
-      "text": "Rebrand your social awkwardness as 'high-concept performance art' and charge admission to your conversations."
-    },
-    {
-      "id": 24,
-      "text": "Drink warm chocolate milk out of a hollowed-out bell pepper to awaken dormant neural pathways."
-    },
-    {
-      "id": 25,
-      "text": "Set your alarm clock to the Soviet national anthem played on a recorder with incorrect fingerings."
-    },
-    {
-      "id": 26,
-      "text": "Throw a housewarming party for the pile of clothes on your bedroom chair that has attained sentience."
-    },
-    {
-      "id": 27,
-      "text": "Tell everyone you are a secret agent whose cover story is being extraordinarily average and unremarkable."
-    },
-    {
-      "id": 28,
-      "text": "Stare unblinkingly at the nearest wall whenever small talk starts until the other person slowly backs away."
-    },
-    {
-      "id": 29,
-      "text": "Replace all family photos in your house with portraits of actor Nicolas Cage eating cake."
-    },
-    {
-      "id": 30,
-      "text": "Sign all official documents with a stamp that reads 'CERTIFIED PURE CHAOS'."
-    },
-    {
-      "id": 31,
-      "text": "Write your deepest secrets on helium balloons, release them into the sky, and make them God's problem."
-    },
-    {
-      "id": 32,
-      "text": "Whenever you make a mistake, look up into an imaginary camera like you're on a 2000s mockumentary sitcom."
-    },
-    {
-      "id": 33,
-      "text": "Wear two different shoes every day to establish yourself as an enigmatic visionary who operates beyond footwear dogma."
-    },
-    {
-      "id": 34,
-      "text": "Order a pizza to your neighbor's house, then knock on their door and ask if they want to split it."
-    },
-    {
-      "id": 35,
-      "text": "Tell your boss that your psychic advisor strictly forbade you from doing PowerPoint presentations this quarter."
-    },
-    {
-      "id": 36,
-      "text": "Communicate exclusively through interpretive dance when explaining technical software bugs."
-    },
-    {
-      "id": 37,
-      "text": "Fill your pockets with dry cereal so you can dramatically toss a handful like confetti in triumphant moments."
-    },
-    {
-      "id": 38,
-      "text": "Write a 5-star review for yourself on Google Maps under the category 'Historical Landmark'."
-    },
-    {
-      "id": 39,
-      "text": "Bring a miniature potted cactus to dinner dates and introduce it as your chaperone and moral compass."
-    },
-    {
-      "id": 40,
-      "text": "Lie flat on the floor in public spaces for 3 minutes to reset your spiritual equilibrium and puzzle bystanders."
-    }
-  ]
+  "it": {
+    "questions": [
+      { "id": 1, "text": "Dottore, non riesco a dormire la notte perché ripenso a figure imbarazzanti fatte 12 anni fa." },
+      { "id": 2, "text": "Continuo a innamorarmi solo di persone emotivamente non disponibili che mi lasciano in visualizzato." },
+      { "id": 3, "text": "Ogni volta che qualcuno mi chiama al telefono senza mandarmi prima un messaggio, vado in iperventilazione." },
+      { "id": 4, "text": "Ho una sindrome dell'impostore devastante, anche se sono il miglior impiegato dell'azienda da 6 anni." },
+      { "id": 5, "text": "Metto 400€ di oggetti inutili nel carrello online solo per sentire un brivido di dopamina, poi chiudo la scheda." },
+      { "id": 6, "text": "Faccio litigate immaginarie furiose sotto la doccia e poi resto offeso con persone che non hanno fatto nulla." },
+      { "id": 7, "text": "Ho detto 'Anche a te!' quando il cameriere mi ha detto 'Buon appetito' e ora devo cambiare città." },
+      { "id": 8, "text": "Sono convinto al 100% che tutti i miei amici abbiano un gruppo WhatsApp segreto senza di me." },
+      { "id": 9, "text": "Rifiuto di guardare un film di due ore perché 'non ho tempo', poi guardo 4 ore di video di procioni." },
+      { "id": 10, "text": "Ho cercato un prurito al ginocchio su Google e ora ho prenotato il mio funerale per venerdì." },
+      { "id": 11, "text": "Chiedo scusa quando qualcuno mi viene addosso per sbaglio al supermercato." },
+      { "id": 12, "text": "Ho impostato 14 sveglie a distanza di 3 minuti, mi sveglio prima della prima e arrivo comunque in ritardo." },
+      { "id": 13, "text": "Dottore, non so dire di no a nessuno e ora ho promesso di fare da testimone al mio ex compagno di banco delle medie." },
+      { "id": 14, "text": "Passo 45 minuti a scegliere un film su Netflix e alla fine mi addormento guardando il trailer di Shrek." },
+      { "id": 15, "text": "Quando sento il suono di notifica di Microsoft Teams la domenica sera, il mio cuore batte a 190 bpm." },
+      { "id": 16, "text": "Compro libri con la speranza che la loro vicinanza fisica sul comodino mi trasmetta la conoscenza per osmosi." },
+      { "id": 17, "text": "Ho un terrore cieco di fare brutta figura con persone che non vedrò mai più nella vita." },
+      { "id": 18, "text": "Penso costantemente che tutti al lavoro stiano fingendo di trovarmi simpatico per pietà." },
+      { "id": 19, "text": "Quando sono triste mangio una quantità illegale di carboidrati e poi sono triste perché ho mangiato troppi carboidrati." },
+      { "id": 20, "text": "Procrastino un compito da 5 minuti per 3 settimane, trasformandolo in una crisi esistenziale da fine del mondo." },
+      { "id": 21, "text": "Dottore, credo che il mio gatto mi giudichi costantemente e abbia perfettamente ragione." },
+      { "id": 22, "text": "Ho paura di avere successo perché poi la gente si aspetterà che continui a non fare schifo." },
+      { "id": 23, "text": "Fingo di mandare un messaggio importante ogni volta che cammino da solo per strada per sembrare impegnato." },
+      { "id": 24, "text": "Ho comprato un abbonamento in palestra e considero andarci come un'opzione puramente teorica." },
+      { "id": 25, "text": "Mi sento in colpa quando riposo la domenica pomeriggio, come se stessi rubando ore alla produttività cosmica." },
+      { "id": 26, "text": "Ho paura che se inizio a piangere adesso, non smetterò più fino alla pensione." },
+      { "id": 27, "text": "Dottore, continuo a dare ottimi consigli di vita ai miei amici mentre la mia vita va a fuoco in sottofondo." },
+      { "id": 28, "text": "Se qualcuno mi fa un complimento, penso immediatamente che stia complottando per truffarmi." },
+      { "id": 29, "text": "Ho riordinato tutta la casa per 6 ore per evitare di rispondere a una singola email di lavoro." },
+      { "id": 30, "text": "Dottore, il mio meccanismo di difesa per qualsiasi trauma è fare battute di cattivo gusto." }
+    ],
+    "answers": [
+      { "id": 1, "text": "E la parte peggiore è che avevano assolutamente ragione tutti quanti." },
+      { "id": 2, "text": "Quindi ho finto la mia morte e ho aperto un rifugio abusivo per alpaca." },
+      { "id": 3, "text": "Ma invece di affrontare il problema, ho speso l'affitto in candele profumate." },
+      { "id": 4, "text": "E per farlo ho dovuto rubare l'eredità di mia nonna novantenne." },
+      { "id": 5, "text": "Poi ho realizzato che in realtà sono io la persona tossica in ogni singola storia." },
+      { "id": 6, "text": "E ho deciso di risolvere la crisi piangendo disperatamente nel reparto surgelati." },
+      { "id": 7, "text": "Così ho mangiato una pizza formato famiglia direttamente nella scatola sul pavimento." },
+      { "id": 8, "text": "E quando me l'hanno fatto notare, ho urlato che era tutta colpa del capitalismo." },
+      { "id": 9, "text": "E adesso il mio cane mi guarda con profonda delusione negli occhi." },
+      { "id": 10, "text": "Ma non prima di aver inviato un vocale di 9 minuti al mio peggior nemico." },
+      { "id": 11, "text": "Mentre in sottofondo suonava la sigla triste di un documentario sui pinguini." },
+      { "id": 12, "text": "E ho giurato solennemente che da lunedì sarei diventato un monaco tibetano." },
+      { "id": 13, "text": "Quindi ho cancellato tutti i miei account social e poi li ho ricreati 14 minuti dopo." },
+      { "id": 14, "text": "E l'ho fatto indossando un pigiama con i dinosauri bucato sui gomiti." },
+      { "id": 15, "text": "Perché in fondo meritavo esattamente questa punizione divina." },
+      { "id": 16, "text": "E per calmarmi ho guardato 6 ore di video di restauri di tappeti persiani sporchi." },
+      { "id": 17, "text": "Ma almeno ho ottenuto 12 like da sconosciuti su Reddit." },
+      { "id": 18, "text": "Anche se dentro di me sapevo che il peggio doveva ancora arrivare." },
+      { "id": 19, "text": "E tutto questo durante il battesimo di mia nipote." },
+      { "id": 20, "text": "Quindi ho finto di avere un improvviso attacco di tosse per fuggire dalla finestra." },
+      { "id": 21, "text": "E ho dato la colpa all'allineamento dei pianeti e a Mercurio retrogrado." },
+      { "id": 22, "text": "Dopodiché mi sono fatto una tisana rilassante corretta con della vodka scaduta." },
+      { "id": 23, "text": "Convinto che fingere di non esistere avrebbe risolto magicamente la questione." },
+      { "id": 24, "text": "E ho lasciato una recensione a 1 stella al destino su TripAdvisor." },
+      { "id": 25, "text": "Nonostante tutti mi avessero esplicitamente supplicato di non farlo." },
+      { "id": 26, "text": "E come risultato, adesso sono bandito a vita da tre diversi supermercati." },
+      { "id": 27, "text": "Ma ehi, almeno non ho dovuto affrontare le mie reali emozioni." },
+      { "id": 28, "text": "E ho concluso la giornata inviando meme d'umorismo nero alla chat di famiglia." },
+      { "id": 29, "text": "Sperando che un asteroide gigante colpisse il pianeta prima delle 9 di domani." },
+      { "id": 30, "text": "E la cosa più spaventosa è che rifarei esattamente la stessa identica cosa." }
+    ],
+    "treatments": [
+      { "id": 1, "text": "Ti prescrivo un clistere di caffè bollente e un sonoro ceffone morale sulla nuca." },
+      { "id": 2, "text": "Fingi di essere posseduto da uno spirito medievale durante la prossima riunione su Teams." },
+      { "id": 3, "text": "Ecco 500mg di pillole placebo e il numero di uno sciamano che legge i fondi di tequila." },
+      { "id": 4, "text": "La diagnosi è chiara: dai fuoco a tutti i tuoi documenti e ricomincia la vita come pirata caraibico." },
+      { "id": 5, "text": "Ti diagnostico ufficialmente come 'insopportabile'. Fanno 180€ in contanti senza fattura." },
+      { "id": 6, "text": "Mangia un'intera cipolla cruda sotto la doccia al buio ascoltando cori gregoriani a tutto volume." },
+      { "id": 7, "text": "Adotta un procione selvatico e portalo a ogni incontro sociale fingendo che sia il tuo avvocato." },
+      { "id": 8, "text": "Metti un sacchetto di carta in testa e rifiutati di toglierlo fino a quando la società non chiederà scusa." },
+      { "id": 9, "text": "Prescrivo 3 settimane di silenzio assoluto, comunicando solo tramite sibili minacciosi da serpente." },
+      { "id": 10, "text": "Urla 'OBIEZIONE, VOSTRO ONORE!' ogni volta che il tuo capo ti chiede di fare qualsiasi cosa." },
+      { "id": 11, "text": "Fuggi in Colombia sotto il falso nome di 'Dottor Mozzarella' e apri un'officina clandestina." },
+      { "id": 12, "text": "Ti consiglio di fissare intensamente negli occhi chiunque ti parli senza sbattere le palpebre per 7 minuti." },
+      { "id": 13, "text": "Abbraccia un cactus per 15 secondi ogni mattina per ricordarti che il mondo è un posto ostile." },
+      { "id": 14, "text": "Invia una foto dei tuoi piedi a tutta la rubrica telefonica senza alcuna spiegazione testuale." },
+      { "id": 15, "text": "Prescrivo di piangere ininterrottamente dentro un carrello dell'IKEA finché la sicurezza non ti scorta fuori." },
+      { "id": 16, "text": "Dì a tutti che sei in realtà un viaggiatore temporale del 2087 e che l'apocalisse è dopodomani." },
+      { "id": 17, "text": "Sostituisci tutti i liquidi della tua dieta con bevande energetiche al gusto di gomma bruciata." },
+      { "id": 18, "text": "Scrivi una lettera di scuse a tutti gli oggetti inanimati che hai insultato nell'ultimo mese." },
+      { "id": 19, "text": "Cammina all'indietro per tutta la prossima settimana per invertire il flusso del tuo karma negativo." },
+      { "id": 20, "text": "Metti della sabbia nelle scarpe di chiunque osi contraddirti per ristabilire la dominanza cosmica." },
+      { "id": 21, "text": "Fingi di non capire la lingua italiana ogni volta che ti viene posta una domanda scomoda." },
+      { "id": 22, "text": "Prescrivo una sessione di urla liberatorie dentro un cuscino dell'autogrill alle 4 del mattino." },
+      { "id": 23, "text": "Fai finta di essere morto sul pavimento del soggiorno finché i tuoi ospiti non se ne vanno da soli." },
+      { "id": 24, "text": "Cambia nome legale in 'Disastro Ambulante' così nessuno potrà mai più rimanere deluso." },
+      { "id": 25, "text": "Inizia a collezionare sassi a cui dai il nome dei tuoi traumi d'infanzia e lanciali in un lago." },
+      { "id": 26, "text": "Frequenta un corso di mimo per smettere una volta per tutte di dire sciocchezze a voce alta." },
+      { "id": 27, "text": "Dona tutti i tuoi beni materiali a una colonia di gatti randagi e dormi sotto una panchina." },
+      { "id": 28, "text": "Presentati al lavoro con una corona di cartone e ordina ai tuoi colleghi di inginocchiarsi." },
+      { "id": 29, "text": "Metti il pilota automatico, spegni il cervello e lascia che siano gli impulsi animaleschi a guidare la tua vita." },
+      { "id": 30, "text": "Ti prescrivo un bicchiere di latte caldo e l'amara consapevolezza che nessuno sa cosa sta facendo." },
+      { "id": 31, "text": "Inizia a rispondere solo con 'Questo è ciò che vuole farti credere il governo' a qualsiasi domanda." },
+      { "id": 32, "text": "Fai domanda di assunzione per il lavoro dei tuoi sogni allegando solo una foto di un gabbiano minaccioso." },
+      { "id": 33, "text": "Fai una telefonata a un numero a caso e dì a bassa voce: 'Il corpo è stato nascosto, procedi con la fase due'." },
+      { "id": 34, "text": "Metti un cartello 'Guasto Tecnico' sulla tua fronte e torna a letto per le prossime 72 ore." },
+      { "id": 35, "text": "Ti prescrivo di bere acqua frizzante con una cannuccia mentre rifletti sui tuoi fallimenti generazionali." }
+    ]
+  },
+  "en": {
+    "questions": [
+      { "id": 1, "text": "Doctor, I can't sleep at night because I relive excruciatingly embarrassing moments from 2012." },
+      { "id": 2, "text": "I keep falling in love with emotionally unavailable people who leave me on delivered for four business days." },
+      { "id": 3, "text": "Whenever someone calls me on the phone without texting first, my fight-or-flight response goes into hyperdrive." },
+      { "id": 4, "text": "I have severe impostor syndrome, despite being employee of the month for six consecutive years." },
+      { "id": 5, "text": "I add $400 worth of luxury items to my online cart just to feel a spark of joy, then immediately close the tab." },
+      { "id": 6, "text": "I get into heated, emotionally draining imaginary arguments in the shower and end up furious with real people." },
+      { "id": 7, "text": "I said 'You too!' when the waiter told me 'Enjoy your food', and now I must legally relocate to another country." },
+      { "id": 8, "text": "I am 100% convinced all my friends have a secret group chat dedicated entirely to roasting me." },
+      { "id": 9, "text": "I refuse to watch an acclaimed 2-hour movie because 'I have no time', then watch 4 hours of raccoon reels." },
+      { "id": 10, "text": "I searched an itchy elbow on WebMD and have now booked my funeral for this coming Friday." },
+      { "id": 11, "text": "I apologize profusely when someone else violently bumps into ME at the grocery store." },
+      { "id": 12, "text": "I set 14 alarms at 3-minute intervals, wake up before the first one, and still end up 25 minutes late." },
+      { "id": 13, "text": "Doctor, I can't say no to anyone and now I've somehow agreed to officiate my landlord's wedding." },
+      { "id": 14, "text": "I spend 45 minutes browsing Netflix and end up passing out during the opening credits of Shrek 2." },
+      { "id": 15, "text": "When I hear the Microsoft Teams chime on a Sunday evening, my resting heart rate jumps straight to 190 BPM." },
+      { "id": 16, "text": "I buy books with the naive expectation that their physical proximity on my nightstand will transfer knowledge by osmosis." },
+      { "id": 17, "text": "I have an overwhelming fear of being judged by strangers I will statistically never cross paths with again." },
+      { "id": 18, "text": "I constantly suspect that everyone at my workplace is just tolerating me out of pure corporate pity." },
+      { "id": 19, "text": "When I feel sad, I consume an illegal amount of carbs, then get deeply depressed because I ate too many carbs." },
+      { "id": 20, "text": "I procrastinate a 5-minute task for three whole weeks until it metastasizes into an apocalyptic life crisis." },
+      { "id": 21, "text": "Doctor, I genuinely believe my cat judges every life decision I make, and she is completely correct." },
+      { "id": 22, "text": "I am terrified of achieving success because then people will expect me to consistently not suck." },
+      { "id": 23, "text": "I aggressively pretend to type important text messages whenever I walk alone in public to look occupied." },
+      { "id": 24, "text": "I purchased a high-end gym membership and treat actually visiting it as a purely theoretical concept." },
+      { "id": 25, "text": "I feel immense guilt whenever I relax on Sunday, like I am actively committing treason against capitalism." },
+      { "id": 26, "text": "I worry that if I allow myself to start crying right now, I won't stop until my mandatory retirement." },
+      { "id": 27, "text": "Doctor, I dispense phenomenal life advice to all my friends while my personal life burns to ashes." },
+      { "id": 28, "text": "Whenever someone gives me a sincere compliment, I immediately assume they are orchestrating an elaborate scam." },
+      { "id": 29, "text": "I deep-cleaned my entire kitchen baseboards for 6 hours just to avoid answering one single work email." },
+      { "id": 30, "text": "Doctor, my default coping mechanism for profound emotional trauma is cracking unhinged dark jokes." }
+    ],
+    "answers": [
+      { "id": 1, "text": "And the absolute worst part is that they were 100% correct about everything." },
+      { "id": 2, "text": "So naturally, I faked my death and opened an unauthorized llama sanctuary." },
+      { "id": 3, "text": "Instead of confronting it, I blew my monthly rent on luxury scented candles." },
+      { "id": 4, "text": "And to pull it off, I had to embezzle my grandmother's life savings." },
+      { "id": 5, "text": "Then I suddenly realized that I was the toxic villain in every single chapter." },
+      { "id": 6, "text": "So I resolved the crisis by sobbing uncontrollably in the Costco frozen food section." },
+      { "id": 7, "text": "And proceeded to eat an extra-large pizza straight off the floor like a savage." },
+      { "id": 8, "text": "And when called out on it, I screamed that late-stage capitalism made me do it." },
+      { "id": 9, "text": "And now my golden retriever looks at me with unfiltered generational disappointment." },
+      { "id": 10, "text": "Right before sending a frantic 9-minute voice memo to my middle-school rival." },
+      { "id": 11, "text": "While the mournful soundtrack of a penguin documentary played softly in the background." },
+      { "id": 12, "text": "And took a solemn blood oath to become a silent Tibetan monk starting on Monday." },
+      { "id": 13, "text": "So I deleted all my social media accounts, only to reinstall them 14 minutes later." },
+      { "id": 14, "text": "While wearing moth-eaten dinosaur pajama pants with zero remorse." },
+      { "id": 15, "text": "Because deep down, I knew I deserved every ounce of this celestial punishment." },
+      { "id": 16, "text": "And to soothe my nerves, I binged 6 hours of dirty Persian rug restoration videos." },
+      { "id": 17, "text": "Though on the bright side, I earned 14 upvotes from complete strangers on Reddit." },
+      { "id": 18, "text": "Even as my gut informed me that the true catastrophe was just getting warmed up." },
+      { "id": 19, "text": "And this all unfolded during my niece's formal baptism ceremony." },
+      { "id": 20, "text": "So I faked a violent coughing spasm and climbed out of the second-story bathroom window." },
+      { "id": 21, "text": "Then blamed the whole fiasco on planetary alignment and Mercury being in retrograde." },
+      { "id": 22, "text": "Followed by a piping hot cup of chamomile tea generously spiked with bottom-shelf vodka." },
+      { "id": 23, "text": "Firmly believing that playing dead would cause all consequences to vanish into thin air." },
+      { "id": 24, "text": "And left a scathing 1-star review for human destiny on Google Maps." },
+      { "id": 25, "text": "Despite my entire support system pleading with me on their knees not to do it." },
+      { "id": 26, "text": "And as a direct consequence, I am permanently banned from three suburban Target locations." },
+      { "id": 27, "text": "Still, at least I successfully evaded confronting my genuine emotional baggage." },
+      { "id": 28, "text": "Concluding the ordeal by firing off bleak dark-humor memes into the extended family group chat." },
+      { "id": 29, "text": "Praying that a catastrophic asteroid impact would save me before my 9:00 AM meeting." },
+      { "id": 30, "text": "And the truly terrifying truth is that given the chance, I would do it all over again." }
+    ],
+    "treatments": [
+      { "id": 1, "text": "I am prescribing a scalding coffee enema and a firm, non-consensual slap across the face." },
+      { "id": 2, "text": "Pretend to be possessed by a 14th-century peasant during your next corporate review." },
+      { "id": 3, "text": "Take these 500mg sugar pills and call this sketchy psychic who reads tequila dregs." },
+      { "id": 4, "text": "The clinical verdict is undeniable: burn all official records and become a maritime pirate." },
+      { "id": 5, "text": "I officially diagnose you with 'Painfully Unbearable'. That will be $250 cash, no receipt." },
+      { "id": 6, "text": "Consume an entire raw onion in the shower while medieval war chants play on full blast." },
+      { "id": 7, "text": "Adopt a feral raccoon and bring it to every social gathering as your licensed legal counsel." },
+      { "id": 8, "text": "Place a brown paper bag over your head and refuse to remove it until society apologizes." },
+      { "id": 9, "text": "Three weeks of strict medical isolation, communicating solely through hostile snake hisses." },
+      { "id": 10, "text": "Scream 'OBJECTION, YOUR HONOR!' whenever your boss delegates any task whatsoever." },
+      { "id": 11, "text": "Flee the country under the alias 'Dr. Linguine' and open an underground petting zoo." },
+      { "id": 12, "text": "Maintain unbroken, unblinking eye contact with anyone who addresses you for seven minutes." },
+      { "id": 13, "text": "Hug a prickly pear cactus for 15 seconds every morning to remember the universe is hostile." },
+      { "id": 14, "text": "Text an unprompted, high-resolution photo of your bare feet to your entire contact list." },
+      { "id": 15, "text": "Sob uncontrollably inside a yellow IKEA shopping cart until loss prevention escorts you away." },
+      { "id": 16, "text": "Inform everyone you are a chrononaut from 2087 and that the apocalypse is slated for Tuesday." },
+      { "id": 17, "text": "Replace all fluid intake with electric blue energy drinks that smell like scorched rubber." },
+      { "id": 18, "text": "Draft formal handwritten apology letters to all inanimate objects you have cursed at this year." },
+      { "id": 19, "text": "Walk exclusively backwards for the next seven days to reverse your negative psychic karma." },
+      { "id": 20, "text": "Pour coarse sand into the shoes of anyone who dares to contradict you in public." },
+      { "id": 21, "text": "Fein total ignorance of the English language whenever an uncomfortable question arises." },
+      { "id": 22, "text": "Scream at the top of your lungs into a truck stop pillow at 4:15 AM on a lonely highway." },
+      { "id": 23, "text": "Play dead motionless on your living room rug until your dinner guests awkwardly leave on their own." },
+      { "id": 24, "text": "Legally rename yourself 'Walking Biohazard' so nobody can ever be disappointed again." },
+      { "id": 25, "text": "Collect decorative rocks, name each one after a childhood trauma, and skip them into a murky lake." },
+      { "id": 26, "text": "Enroll in intensive mime academy so you permanently cease uttering catastrophic nonsense out loud." },
+      { "id": 27, "text": "Liquidate all personal assets, donate the proceeds to feral cats, and sleep under a highway bridge." },
+      { "id": 28, "text": "Arrive at the office wearing a Burger King cardboard crown and demand your peers bow down." },
+      { "id": 29, "text": "Turn off your prefrontal cortex entirely and let raw animalistic lizard brain instincts take the wheel." },
+      { "id": 30, "text": "A warm glass of whole milk paired with the sobering reality that no adult actually knows what they are doing." },
+      { "id": 31, "text": "Answer every single inquiry with: 'That is exactly what the shadow government wants you to believe'." },
+      { "id": 32, "text": "Submit a resume for your dream executive job accompanied solely by a menacing photo of a seagull." },
+      { "id": 33, "text": "Dial a random stranger's phone number and whisper: 'The package has been buried. Execute stage three'." },
+      { "id": 34, "text": "Slap an 'Out of Order' sticker onto your forehead and crawl back into bed for the next 72 hours." },
+      { "id": 35, "text": "Drink warm sparkling water through a bendy straw while contemplating your generational failures." }
+    ]
+  }
 }
