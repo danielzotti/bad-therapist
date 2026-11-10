@@ -1,7 +1,7 @@
 // Bad Therapist - PWA Service Worker (Vanilla JS)
 // Implements Stale-While-Revalidate for seamless offline play and background updates.
 
-const CACHE_NAME = 'bad-therapist-cache-v1';
+const CACHE_NAME = 'bad-therapist-cache-v2';
 
 const PRECACHE_ASSETS = [
   '/',

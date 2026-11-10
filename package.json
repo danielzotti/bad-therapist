@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3123",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start --port 3123",
+    "lint": "next lint",
+    "deck:build": "python3 scripts/build_final_deck.py"
   },
   "dependencies": {
     "next": "^15.1.4",
