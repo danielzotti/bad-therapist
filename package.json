@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start --port 3123",
     "lint": "next lint",
-    "deck:build": "python3 scripts/build_final_deck.py"
+    "deck:build": "node scripts/build-deck.mjs"
   },
   "dependencies": {
     "next": "^15.1.4",
