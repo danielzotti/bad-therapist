@@ -6,34 +6,69 @@ Deployed as a standalone Progressive Web App (PWA) to **[bad-therapist.zotti.dev
 
 ---
 
-## 🎮 How to Play (3-Panel Comic Rules)
+## 🎮 How to Play / Regole del Gioco
 
 Each round creates an unhinged, comedic 3-panel comic strip about therapy:
-- **Panel 1 (Question)**: The patient's problem/dilemma.
-- **Panel 2 (Answer)**: The patient's ridiculous escalation or reaction.
-- **Panel 3 (Treatment)**: The punchline therapy prescribed to the patient.
-
-### Round Gameplay:
-1. **The Therapist Setup**:
-   - The device is handed to the active **Therapist** (the judge).
-   - The Therapist draws a **Question card** (Panel 1) and selects an **Answer card** (Panel 2) from drawn options to establish the premise.
-2. **Pass to the Patients (5-Card Hand)**:
-   - The phone is passed to each non-therapist player one by one behind a privacy shield.
-   - Each player examines the comic premise, views their private hand of **5 Treatment cards**, and picks the funniest/darkest punchline to submit.
-   - Submitted cards are replaced instantly from the deck so hands always stay at 5.
-3. **The Therapist's Verdict**:
-   - The device returns to the Therapist.
-   - The Therapist reviews all submitted treatments (shuffled anonymously), reads each full 3-panel comic out loud to the party, and awards **+1 Point** to the best punchline!
-4. **Rotate & Win**:
-   - The Therapist role rotates clockwise.
-   - The first player to reach **3 points** (or configurable 5 / endless mode) wins the game!
+- **Panel 1 / Vignetta 1 (Question / Domanda)**: The patient's dilemma, confession, or problem.
+- **Panel 2 / Vignetta 2 (Answer / Risposta)**: The patient's ridiculous escalation or unexpected reaction.
+- **Panel 3 / Vignetta 3 (Treatment / Trattamento)**: The punchline therapy prescribed by the player to "cure" the patient.
 
 ---
 
-## 🌐 Language Selector & Custom Cards
+### 🇮🇹 Regole del Gioco (Italiano)
 
-- **Bilingual Support (🇮🇹 Italian & 🇬🇧 English)**: Easily switch languages anytime directly from the setup screen or header toggle.
-- **Customizable Cards (`public/data.json`)**: Easily add, edit, or import custom cards across `questions`, `answers`, and `treatments` in either language.
+1. **Preparazione (2-8 Giocatori)**:
+   - Inserisci i nomi dei giocatori, seleziona avatar e lingua (Italiano o Inglese), e imposta l'obiettivo di punti (**3 punti** regola ufficiale, **5 punti** maratona, o **Infinito**).
+   - A ogni giocatore viene distribuita una mano segreta di **5 carte Trattamento**.
+2. **Fase 1: Il Caso Clinico (Il Terapeuta)**:
+   - Il giocatore di turno nel ruolo di **Terapeuta** (il giudice) tiene il dispositivo.
+   - Viene pescata una carta **Domanda** (Vignetta 1) — con possibilità di cambiarla con il tasto *🎲 Cambia Domanda*.
+   - Il Terapeuta sceglie una delle opzioni di **Risposta** (Vignetta 2) pescate dal mazzo per impostare la premessa comica.
+3. **Fase 2: Prescrivi la Terapia (I Pazienti - Mano di 5 Carte)**:
+   - Il dispositivo viene passato a turno a ciascun altro giocatore dietro uno schermo di riservatezza (*Solo per gli occhi di...*).
+   - Ciascun paziente legge la premessa delle prime due vignette, consulta la propria mano di **5 carte Trattamento** e seleziona la chiusura più assurda, cinica o esilarante per la Vignetta 3.
+   - Una volta inviata la carta, questa viene rimpiazzata immediatamente dal mazzo: la mano resta sempre a 5 carte.
+4. **Fase 3: Il Verdetto del Terapeuta**:
+   - Il telefono ritorna al Terapeuta.
+   - Le proposte ricevute vengono mescolate in modo anonimo *(in partite a 2 giocatori viene aggiunta automaticamente una proposta extra dall'"Intelligenza Malasanitaria 🤖" per garantire sempre una scelta cieca)*.
+   - Il Terapeuta legge ad alta voce ogni combinazione completa di 3 vignette al gruppo e premia con **+1 Punto** il Trattamento migliore!
+5. **Rotazione & Vittoria**:
+   - Il ruolo del Terapeuta passa in senso orario al giocatore successivo.
+   - Il primo giocatore che raggiunge **3 punti** (o il traguardo configurato) vince la partita!
+
+---
+
+### 🇬🇧 How to Play (English)
+
+1. **Setup (2-8 Players)**:
+   - Set up players, pick emojis and preferred language (Italian or English), and select the win condition (**3 Points** official rules, **5 Points** marathon, or **Endless** party mode).
+   - Every player is dealt an initial secret hand of **5 Treatment cards**.
+2. **Phase 1: Set Up The Case (The Therapist)**:
+   - The device is handed to the active **Therapist** (the round's judge).
+   - A **Question card** is drawn for Panel 1 (with an option to *🎲 Reroll Question*).
+   - The Therapist selects an **Answer card** (Panel 2) from the drawn options to establish the premise.
+3. **Phase 2: Pass to the Patients (5-Card Hand)**:
+   - The phone is passed to each non-therapist player one by one behind a privacy shield (*Eyes Only For...*).
+   - Each player views the 2-panel setup, checks their hand of **5 Treatment cards**, and submits their funniest or darkest punchline for Panel 3.
+   - The submitted card is instantly replaced from the deck so hands always stay at 5.
+4. **Phase 3: The Therapist's Verdict**:
+   - The device returns to the Therapist.
+   - All submitted treatments are shuffled anonymously *(in 2-player games, an extra dummy card from the "Medical Malpractice AI 🤖" is added so the judge always has multiple anonymous options)*.
+   - The Therapist reads each full 3-panel comic out loud with dramatic delivery and awards **+1 Point** to the best punchline!
+5. **Rotate & Win**:
+   - The Therapist role rotates clockwise.
+   - The first player to reach **3 points** (or the chosen target) wins the game!
+
+---
+
+## 🌐 Bilingual Deck & Content Details
+
+- **860 Unique Cards per Language (1,720 Total)**:
+  - 🛋️ **200 Questions** (Patient dilemmas & confessions)
+  - 💥 **60 Answers** (Escalations & unexpected reactions)
+  - 💊 **600 Treatments** (Hilarious, dark, and unhinged punchlines)
+- **Instant Language Switching**: Toggle between Italian (🇮🇹) and English (🇬🇧) at any time.
+- **Customizable Cards (`public/data.json`)**: Easily add, edit, or rebuild decks using `npm run deck:build`.
 
 ---
 
